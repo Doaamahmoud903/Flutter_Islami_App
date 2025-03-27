@@ -88,7 +88,7 @@ class _SebhaTabState extends State<SebhaTab> with SingleTickerProviderStateMixin
             children: [
               Text(
                 tasbeehList.isNotEmpty ? tasbeehList[currentIndex].description : "",
-                style: AppStyles.fontBold30,
+                style: AppStyles.fontBold24,
                 overflow: TextOverflow.visible,
                 softWrap: true,
                 textDirection: TextDirection.rtl,

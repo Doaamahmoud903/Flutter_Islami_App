@@ -18,7 +18,7 @@ class SuraList extends StatelessWidget {
           vertical: height*0.01
       ),
       width: double.infinity,
-      height: height*0.08,
+      height: height*0.09,
       decoration: BoxDecoration(
       ),
       child: Row(
@@ -33,13 +33,13 @@ class SuraList extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(width: width*0.08,),
+          SizedBox(width: width*0.09,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 englishQuranSurahs[index],
-                style: AppStyles.fontBold24,
+                style: AppStyles.fontBold20White,
                 textAlign: TextAlign.start,
               ),
               Text(
@@ -52,7 +52,7 @@ class SuraList extends StatelessWidget {
           Spacer(),
           Text(
             arabicAuranSuras[index],
-            style: AppStyles.fontBold24,
+            style: AppStyles.fontBold20White,
             textAlign: TextAlign.end,
           ),
         ],

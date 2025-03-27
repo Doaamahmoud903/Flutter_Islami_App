@@ -79,7 +79,10 @@ class _HadithItemState extends State<HadithItem> {
             ),
             Row(
               children: [
-                Image.asset(AppAssets.mosqueBottom),
+                Flexible(
+                  child: Image.asset(AppAssets.mosqueBottom,
+                  fit: BoxFit.contain,),
+                ),
               ],
             )
 

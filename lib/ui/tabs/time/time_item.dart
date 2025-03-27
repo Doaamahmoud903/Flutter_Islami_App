@@ -21,7 +21,7 @@ class TimeItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: size.width * 0.5,
+        width: size.width * 0.45,
         margin: const EdgeInsets.symmetric(horizontal: 8),
         decoration: _buildBoxDecoration(),
         child: _buildContent(size),
@@ -65,7 +65,7 @@ class TimeItem extends StatelessWidget {
     return Image.asset(
       _getIconForCategory(categoryName),
       width: size.width * 0.35,
-      height: size.width * 0.35,
+      height: size.width * 0.3,
       fit: BoxFit.contain,
     );
   }

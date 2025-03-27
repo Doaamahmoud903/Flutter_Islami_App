@@ -32,6 +32,12 @@ class AppAssets{
   static const String tasabeehIcon = "assets/images/Icon7.png";
   static const String sleepIcon = "assets/images/Icon8.png";
   static const String defaultIcon = "assets/images/Icon9.png";
+  static const String iconBrand = "assets/images/OBJECTS.png";
+  static const String playIcon = "assets/images/Play.png";
+  static const String pauseIcon = "assets/images/Pause.png";
+  static const String volumnIcon = "assets/images/VolumeHigh.png";
+  static const String muteIcon = "assets/images/mute.png";
+
 
 
 }

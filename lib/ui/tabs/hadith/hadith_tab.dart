@@ -11,7 +11,7 @@ class HadithTab extends StatelessWidget {
 
     return  CarouselSlider(
       options: CarouselOptions(
-          height: 600.0,
+          height: MediaQuery.of(context).size.height*0.67,
           reverse: true,
       enableInfiniteScroll: true,
       enlargeCenterPage: true),

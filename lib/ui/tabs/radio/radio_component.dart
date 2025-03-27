@@ -3,9 +3,18 @@ import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_style.dart';
 
-class RadioComponent extends StatelessWidget {
+class RadioComponent extends StatefulWidget {
   final String name;
  const RadioComponent({super.key , required this.name});
+
+  @override
+  State<RadioComponent> createState() => _RadioComponentState();
+}
+
+class _RadioComponentState extends State<RadioComponent> {
+  bool isPlaying = false;
+  bool isMuted = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +33,37 @@ class RadioComponent extends StatelessWidget {
           Image.asset(AppAssets.mosqueBottom),
           Column(
             children: [
-              Text(name,
+              Text(widget.name,
                 style: AppStyles.fontBold16Black,
               ),
               SizedBox(height: 10,),
-              Image.asset(AppAssets.icons ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        isPlaying = !isPlaying; // Toggle play/pause state
+                      });
+                    },
+                    child: Image.asset(
+                      isPlaying ? AppAssets.pauseIcon : AppAssets.playIcon,
+                    ),
+                  ),
+                  SizedBox(width: screenWidth * 0.03),
+                  InkWell(
+                    onTap: (){
+                      setState(() {
+                        isMuted = !isMuted;
+                      });
+                    },
+                      child: Image.asset(
+                        isMuted
+                          ?AppAssets.muteIcon:
+                            AppAssets.volumnIcon,
+                      )),
+                ],
+              ),
             ],
           )
         ],

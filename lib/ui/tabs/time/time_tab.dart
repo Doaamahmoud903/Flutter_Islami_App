@@ -63,12 +63,14 @@ class _TimeTabState extends State<TimeTab> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Column(
         children: [
           Expanded(
-            child: SizedBox(  // ✅ Limit height
-              height: height * 0.4, // 90% of screen height
+            child: SizedBox(
+              height: height * 0.9,
               child: PrayerTimesScreen(),
             ),
           ),
@@ -78,7 +80,11 @@ class _TimeTabState extends State<TimeTab> {
                 : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 Text("Azkar",
+                 Padding(
+                   padding: EdgeInsets.symmetric(horizontal: width*0.04 ),
+                   child: Text("Azkar",
+                     style: AppStyles.fontBold16,
+                   ),
                  ),
                 CarouselSlider(
                   options: CarouselOptions(

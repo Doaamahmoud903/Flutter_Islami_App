@@ -19,7 +19,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        toolbarHeight: 200,
+        toolbarHeight: MediaQuery.of(context).size.height*0.2,
         title: Image.asset("assets/images/mainLogo.png"),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -36,8 +36,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 children: [
                   Image.asset(
                     page["img"]!,
-                    width: 310,
-                    height: 350,
+                    width: MediaQuery.of(context).size.width*0.6,
+                    height: MediaQuery.of(context).size.height*0.3,
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(height: 20),
@@ -59,7 +59,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
               decoration: const PageDecoration(
                 pageColor: Colors.black,
-                contentMargin: EdgeInsets.only(top: 5),
+                contentMargin: EdgeInsets.only(top: 3),
               ),
             );
           }).toList(),
@@ -81,7 +81,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           dotsDecorator: const DotsDecorator(
             size: Size(10.0, 10.0),
             color: Colors.grey,
-            activeSize: Size(22.0, 10.0),
+            activeSize: Size(15.0, 10.0),
             activeColor: Colors.blue,
             activeShape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(25.0)),

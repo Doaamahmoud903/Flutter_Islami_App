@@ -33,7 +33,7 @@ class PrayerTimesScreen extends StatelessWidget {
       body: Center(
         child: Container(
           width: MediaQuery.of(context).size.width * 0.94,
-          height: MediaQuery.of(context).size.height * 0.3,
+          height: MediaQuery.of(context).size.height * 0.33,
           decoration: BoxDecoration(
             color: AppColor.primaryColor,
             borderRadius: BorderRadius.circular(20),
@@ -50,9 +50,9 @@ class PrayerTimesScreen extends StatelessWidget {
               ),
 
               Positioned(
-                top: 10,
-                left: 15,
-                right: 15,
+                top: MediaQuery.of(context).size.height*0.01,
+                left: MediaQuery.of(context).size.width*0.01,
+                right: MediaQuery.of(context).size.width*0.01,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -71,19 +71,19 @@ class PrayerTimesScreen extends StatelessWidget {
               ),
 
               Positioned(
-                top: 80,
-                left: 10,
-                right: 10,
+                top:MediaQuery.of(context).size.height*0.09 ,
+                left: MediaQuery.of(context).size.width*0.01,
+                right: MediaQuery.of(context).size.width*0.01,
                 child: SizedBox(
                   height: 140,
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: prayerTimes.length,
-                    separatorBuilder: (_, __) => SizedBox(width: 10),
+                    separatorBuilder: (_, __) => SizedBox(width:  MediaQuery.of(context).size.width*0.01),
                     itemBuilder: (context, index) {
                       String prayerName = prayerTimes.keys.elementAt(index);
                       String prayerTime = prayerTimes.values.elementAt(index);
-                      bool isActive = prayerName == 'Asr'; // الصلاة الحالية
+                      bool isActive = prayerName == 'Asr';
 
                       return PrayerTimeCard(
                         prayerName: prayerName,
@@ -95,7 +95,6 @@ class PrayerTimesScreen extends StatelessWidget {
                 ),
               ),
 
-              // 📌 توقيت الصلاة القادمة
               Positioned(
                 bottom: 15,
                 left: 20,
@@ -116,7 +115,6 @@ class PrayerTimesScreen extends StatelessWidget {
     );
   }
 
-  // 📌 ودجت عرض التاريخ داخل الهيدر
   Widget _dateContainer(String text) {
     return Container(
       padding: EdgeInsets.all(8),
@@ -131,7 +129,6 @@ class PrayerTimesScreen extends StatelessWidget {
   }
 }
 
-// 📌 كلاس رسم الهيدر المنحني
 class CustomHeaderClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

@@ -17,7 +17,6 @@ class PrayerTimeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       padding: EdgeInsets.symmetric(
-          vertical: MediaQuery.of(context).size.height * 0.01,
         horizontal: MediaQuery.of(context).size.width * 0.02
       ),
         decoration: BoxDecoration(
